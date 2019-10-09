@@ -1,0 +1,62 @@
+        
+                <!-- <div class="tab-section"  *ngIf="isVisible === false"> -->
+                    <!-- <mat-tab-group>
+                        <mat-tab label="Grundinformation"></mat-tab>
+                        <mat-tab label="Detalijer"><app-article-details></app-article-details>  </mat-tab>
+                        <mat-tab label="Lager"> </mat-tab>
+                        <mat-tab label="Rabatter"> Content 4 </mat-tab>
+                        <mat-tab label="Matarstallning"> Content 5 </mat-tab>
+                        <mat-tab label="Service"> Content 6 </mat-tab>
+                        <mat-tab label="Reparation"> Content 7 </mat-tab>
+                        <mat-tab label="Anteckninger"> Content 8 </mat-tab>
+                        <mat-tab label="Varde"> Content 9 </mat-tab>
+                        <mat-tab label="Statistik"> Content 1 </mat-tab>
+                        <mat-tab label="Spårning"> Content 2 </mat-tab>
+                    </mat-tab-group>
+                </div>
+                -->
+       
+        <div>
+        
+        <form action="/action_page.php">
+          <label for="fname">Articlenumber</label>
+          <input type="text" id="fname" name="Articlenumber"  value="{{clickedUser.article_number}}">
+      
+          <label for="lname">Benämning</label>
+          <input type="text" id="lname" name="lastname" placeholder="Benämning" value="{{clickedUser.group_number}}">
+          
+          <label for="lname">Kategori</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." value="{{clickedUser.article_name}}">
+      
+          <label for="country">Enhet</label>
+          <select id="country"  [(ngModel)]="clickedUser.article_unit_code" [ngModelOptions]="{standalone: true}"  >
+            <option *ngFor= "let obj of articleUnit" [value]="obj.value"> {{obj.name}}</option>
+          </select>
+
+          <label for="country" >Artikelgrupp</label>
+          <select id="country"  [(ngModel)]="clickedUser.article_group" [ngModelOptions]="{standalone: true}" >
+          <option *ngFor= "let obj of articlegroup" [value]="obj.value"> {{obj.name}}</option>      
+          </select>
+
+          <label for="country">KonteringsKod</label>
+          <select id="country"[(ngModel)]="clickedUser.article_accounting_code" [ngModelOptions]="{standalone: true}">
+          <option *ngFor= "let obj of articleAcount" [value]="obj.value"> {{obj.name}}</option> 
+          </select>
+
+          <table>
+          <tr *ngIf="clickedUser.article_type === 'RO'"><input type="checkbox" [checked]="clickedUser.stocked === 'Y'">Lagerförd<br></tr> 
+          <tr><input type="checkbox" [checked]="clickedUser.article_chart === 'Y'">Visa i Översikt<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.discountable === 'Y'">kan rabatters<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.return_control === 'Y'">ReturnKontroll<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.discountable === 'Y'">Etikett vid retur<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.return_control === 'Y'">Mätarställ./Slitage<br></tr> 
+          <tr><input type="checkbox" [checked]="clickedUser.discountable === 'Y'">kan Rabbat<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.kickbackable === 'Y'">Ger bonus<br></tr>
+          <tr><input type="checkbox" [checked]="clickedUser.hidden === 'Y'">Dold<br></tr>
+          </table>
+          <input type="submit" value="Submit">
+        </form>
+      </div> 
+    
+    
+    

@@ -1,0 +1,46 @@
+<table align="left">
+<tr>
+<div class="filter-section"></div> 
+</tr>
+<tr>
+<div class="list-section">
+      
+        <table align="center" *ngIf="isVisible === true" >
+            <tr align="center" border="1" >
+                <td>Article Type</td>
+                    <td>Article Group</td>
+                        <td>Article Number</td>
+                            <td>Article Name</td>
+                                <td>Stock</td>
+
+            </tr>
+            <tr align="left" *ngFor= "let obj of articlearray ; let i = index">
+                   <td [routerLink] = "['/articlegenralinformation',obj.ID]">{{obj.article_type}}</td>
+                   <td >{{obj.article_group}}</td>
+                   <td>{{obj.article_number}}</td>
+                   <td>{{obj.article_name}}</td>
+                   <td>{{obj.stocked}}</td>
+               </tr>
+        </table>
+   
+</div>
+</tr>
+
+<tr>
+<div class="tab-section"  *ngIf="isVisible === false">
+    <mat-tab-group>
+        <mat-tab label="Grundinformation"> <app-article-genral-infromation> </app-article-genral-infromation></mat-tab>
+        <mat-tab label="Detalijer"><app-article-details></app-article-details>  </mat-tab>
+        <mat-tab label="Lager"> </mat-tab>
+        <mat-tab label="Rabatter"> Content 4 </mat-tab>
+        <mat-tab label="Matarstallning"> Content 5 </mat-tab>
+        <mat-tab label="Service"> Content 6 </mat-tab>
+        <mat-tab label="Reparation"> Content 7 </mat-tab>
+        <mat-tab label="Anteckninger"> Content 8 </mat-tab>
+        <mat-tab label="Varde"> Content 9 </mat-tab>
+        <mat-tab label="Statistik"> Content 1 </mat-tab>
+        <mat-tab label="Spårning"> Content 2 </mat-tab>
+    </mat-tab-group>
+</div>
+</tr>
+</table>

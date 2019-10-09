@@ -1,0 +1,50 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    position: fixed;
+    flex: 1 1 auto;
+    
+  }
+
+  .example-container {
+    /* position: fixed; */
+    width: 100%;
+    height: 1000px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .article-toolbar{
+    height: 50px;
+    position: relative;
+  }
+  .article-container{
+    height: auto;
+    
+  }
+  
+
+nav a.active {
+  background-color:red;
+}
+
+.navbar {
+  width: 100%;
+  
+}
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color:#000;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.navbar a:hover {
+  background-color: red;
+}

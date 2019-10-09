@@ -1,0 +1,63 @@
+
+<!-- Toolbar Menu -->
+
+<mat-toolbar>
+  <div class="navbar"> 
+    <a><mat-icon aria-hidden="false" (click)="sidenav.open()" >menu</mat-icon></a> 
+  </div>
+</mat-toolbar>
+
+<div *ngIf="toolbar === false" class="article-toolbar">
+    <div class="navbar"> 
+      <a><mat-icon aria-hidden="false" >search</mat-icon></a> 
+      <a><mat-icon aria-hidden="false">add</mat-icon></a>
+    </div>
+</div>
+
+<!-- Sider Bar Menu  -->
+<div>
+<mat-sidenav-container
+    class="example-container" (backdropClick)="close('backdrop')" >
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+      <mat-nav-list>
+          <!-- <a mat-list-item (click)="close('toggle button')" *ngFor="let link of links"> {{ link }} </a> -->
+          <div class="icon-bar">
+              <nav>
+              <a routerLink="/overview" (click)="close('toggle button')"><p class="icon-name">Overview</p><img src="assets/idag.png"></a> 
+              <a routerLink="/project" (click)="close('toggle button')"><p class="icon-name">Project</p><img src="assets/projekt.png"></a> 
+              <a routerLink="/order" (click)="close('toggle button')"><p class="icon-name">Order</p><img src="assets/Order.png"></a> 
+              <a routerLink="/articles"  (click)="close('toggle button')"><p class="icon-name">Artiklar</p><img src="assets/artiklar.png"></a> 
+              <a routerLink="/transport" (click)="close('toggle button')"><p class="icon-name">Transport</p><img src="assets/Transport.png"></a>
+              <a routerLink="/customer" (click)="close('toggle button')"><p class="icon-name">Kund</p><img src="assets/kunder.png"></a> 
+             </nav>
+            </div>
+       </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- <mat-sidenav-content class="main-content"> -->
+    <div class="menuview-seaction">
+      <!-- <div>
+        <table align="center" border="1">
+            <tr>
+                <td>Employee Name</td>
+                <td>Employee Salary</td>
+                <td>Employee Age</td>
+
+            </tr>
+            <tr *ngFor= "let obj of homearray ; let i = index">
+                   <td (click)="update(obj,i)" >{{obj.employee_name}}</td>
+                   <td>{{obj.employee_salary}}</td>
+                   <td>{{obj.employee_age}}</td>
+               </tr>
+        </table>
+    </div> -->
+  
+    <router-outlet></router-outlet>
+  </div>
+  <!-- </mat-sidenav-content> -->
+</mat-sidenav-container>
+</div>
+
+
+
+ 
